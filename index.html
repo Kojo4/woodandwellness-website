@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wood and Wellness</title>
+<meta property="og:title" content="Wood and Wellness">
+<meta property="og:description" content="Hands on construction and product design programmes for schools, SEND settings, youth justice and adult learners across London.">
+<meta property="og:image" content="assets/og.png">
+<link rel="icon" href="assets/og.png">
+<meta name="description" content="Hands on construction and product design programmes for schools, SEND settings, youth justice and adult learners across London. Traditional craft, modern tools, measured outcomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: workshop bench. A dark navy hero like the timber store, then light cream workbench sections, one idea per section, and a contact strip at the end. */
+:root{
+  --navy:#1C2230; --navy-2:#273042; --tan:#C9975B; --tan-light:#E2C08F; --cream:#FBF6EF; --paper:#F3ECE1;
+  --ink:#1C2230; --muted:#5C6270; --line:#E2D8C9; --green:#3F6B44;
+  --display:'Oswald','Arial Narrow',Arial,sans-serif; --body:'Nunito Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --bg:var(--cream); --fg:var(--ink);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cream:#141922;--paper:#1A202B;--ink:#EFE9DF;--muted:#A9AFBA;--line:#2C3443;--bg:#141922;--fg:#EFE9DF;--tan:#D9A86B;color-scheme:dark}}
+:root[data-theme="dark"]{--cream:#141922;--paper:#1A202B;--ink:#EFE9DF;--muted:#A9AFBA;--line:#2C3443;--bg:#141922;--fg:#EFE9DF;--tan:#D9A86B;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,5vw,52px)}
+h3{font-size:22px;letter-spacing:.03em}
+p{margin:0;max-width:62ch}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tan)}
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navy);color:#FBF6EF;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:44px;width:auto}
+.brand span{font-family:var(--display);font-size:20px;letter-spacing:.06em;text-transform:uppercase}
+.nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;font-size:15px;font-weight:600}
+.nav ul a{text-decoration:none;opacity:.85}
+.nav ul a:hover{opacity:1;color:var(--tan-light)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:6px;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--tan);color:#1C2230}
+.btn.primary:hover{background:var(--tan-light)}
+.btn.ghost{border-color:currentColor}
+@media (max-width:860px){.nav ul{display:none}}
+/* hero */
+.hero{background:var(--navy);color:#FBF6EF;overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding-block:72px 84px}
+.hero h1{font-size:clamp(44px,7.5vw,92px);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--tan-light)}
+.hero p.lead{font-size:20px;color:#DCD5C9;margin-top:20px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.grain{width:100%;height:auto;max-width:420px;justify-self:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 56px}.grain{max-width:260px;order:-1}}
+.proof{background:var(--navy-2);color:#FBF6EF}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-block:24px}
+.proof div{display:flex;flex-direction:column;gap:2px}
+.proof b{font-family:var(--display);font-size:30px;color:var(--tan-light);font-weight:600;font-variant-numeric:tabular-nums}
+.proof span{font-size:14px;color:#C9C2B6}
+@media (max-width:760px){.proof .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* sections */
+section.block{padding-block:84px}
+section.alt{background:var(--paper)}
+.head{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+section.alt .card{background:var(--cream)}
+.card .tag{font-size:13px;font-weight:700;color:var(--muted)}
+.card ul{margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:16px}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+/* compare */
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.compare .side{padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.compare .side.modern{background:var(--navy);color:#FBF6EF}
+.compare .vs{display:grid;place-items:center;background:var(--tan);color:#1C2230;font-family:var(--display);font-size:22px;padding:0 14px}
+.compare ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:16px}
+@media (max-width:760px){.compare{grid-template-columns:1fr}.compare .vs{padding:10px}}
+/* steps: a real sequence */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.step{border-top:3px solid var(--tan);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.step .n{font-family:var(--display);font-size:15px;color:var(--tan);letter-spacing:.1em}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+/* outcomes */
+.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.measure{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg)}
+.measure div{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-top:1px solid var(--line);font-size:16px}
+.measure div:first-child{border-top:0}
+.measure b{font-family:var(--display);font-weight:500;letter-spacing:.04em;text-transform:uppercase;font-size:15px}
+.measure span{color:var(--muted);text-align:right}
+@media (max-width:860px){.outcomes{grid-template-columns:1fr}}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.badge{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px;font-weight:700}
+/* contact */
+.contact{background:var(--navy);color:#FBF6EF}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-block:80px}
+.contact p{color:#DCD5C9}
+form{display:flex;flex-direction:column;gap:12px}
+label{font-size:14px;font-weight:700;display:flex;flex-direction:column;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:12px;border-radius:6px;border:1px solid #3A4458;background:#11151E;color:#FBF6EF}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus,a:focus-visible,.btn:focus-visible{outline:2px solid var(--tan-light);outline-offset:2px}
+.mail{font-family:var(--display);font-size:26px;letter-spacing:.03em;color:var(--tan-light);user-select:all;overflow-wrap:anywhere}
+.formnote{font-size:14px;color:#C9C2B6}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+footer{background:#11151E;color:#A9AFBA;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo_tan.png" alt="" width="21" height="44"><span>Wood &amp; Wellness</span></a>
+    <ul>
+      <li><a href="#programmes">Programmes</a></li>
+      <li><a href="#approach">Our approach</a></li>
+      <li><a href="#outcomes">Outcomes</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn primary" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Construction and product design education</p>
+      <h1 style="margin-top:14px">Traditional craft. <em>Modern tools.</em> Real progress.</h1>
+      <p class="lead">Hands on, accredited programmes in carpentry, bricklaying, plumbing, electrical and digital making for schools, specialist SEND settings, youth justice services and adult learners across London.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#contact">Book a call</a>
+        <a class="btn ghost" href="#programmes">See programmes</a>
+      </div>
+    </div>
+    <svg class="grain" viewBox="0 0 300 420" role="img" aria-label="Wood grain lines">
+      <g fill="none" stroke="#C9975B" stroke-width="5" stroke-linecap="round">
+        <path d="M40 10 C40 120 10 180 30 260 C45 320 40 380 40 410"/>
+        <path d="M80 10 C70 90 60 130 75 190 C95 260 70 330 80 410"/>
+        <path d="M110 10 C95 70 70 110 75 150 C80 190 120 200 120 160 C120 120 100 100 105 60"/>
+        <path d="M95 140 C95 125 108 125 108 140 C108 155 95 155 95 140"/>
+        <path d="M150 10 C140 110 120 170 135 250 C150 320 130 380 140 410"/>
+        <path d="M190 10 C180 100 170 170 185 240 C200 310 180 370 190 410"/>
+        <path d="M225 10 C220 90 215 180 225 260 C235 330 220 380 228 410"/>
+        <path d="M260 10 C262 120 250 200 262 280 C272 350 258 390 262 410"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<div class="proof" aria-label="Track record">
+  <div class="wrap">
+    <div><b>100+</b><span>young people on Enfield Council's Summer University</span></div>
+    <div><b>2 years</b><span>running that programme back to back</span></div>
+    <div><b>6 weeks</b><span>per accredited block, plus a live site visit</span></div>
+    <div><b>1 OT</b><span>measuring every learner's progress</span></div>
+  </div>
+</div>
+
+<section class="block" id="programmes" aria-labelledby="h-prog">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Programmes</p>
+      <h2 id="h-prog">Who we work with</h2>
+      <p class="lead">We bring the workshop to you. Every programme runs as a ready to go block, with tutors, materials, safety and accreditation handled by us.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Schools and SEND settings</h3>
+        <p>Construction and product design blocks for independent and specialist schools, built around each learner's EHCP.</p>
+        <ul><li>Carpentry and joinery</li><li>Bricklaying</li><li>Plumbing</li><li>Electrical, on safe low voltage boards</li><li>3D printing and digital making</li></ul>
+      </article>
+      <article class="card">
+        <h3>Youth justice</h3>
+        <p>Practical making that builds focus, confidence and real skills, with a route on for young people who want to keep going.</p>
+        <ul><li>Small group, hands on sessions</li><li>Accredited units</li><li>Support to set up as an independent maker, where funding allows</li></ul>
+      </article>
+      <article class="card">
+        <h3>Adult and community</h3>
+        <p>Product design courses that combine woodworking, 3D printing and electronics for adult learners and community groups.</p>
+        <ul><li>Beginner friendly</li><li>Wellbeing at the centre</li><li>Mobile kit for community venues</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="approach" aria-labelledby="h-app">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Our approach</p>
+      <h2 id="h-app">Cut it by hand. Cut it by machine.</h2>
+      <p class="lead">Learners do every task the traditional way, then again with the tools the trade uses today. They time it, measure it and decide which a real workshop should use.</p>
+    </div>
+    <div class="compare">
+      <div class="side">
+        <p class="eyebrow">Traditional</p>
+        <ul><li>Saw, chisel and housing joints</li><li>String line and spirit level</li><li>Screw terminals and compression joints</li><li>Plans drawn on paper</li></ul>
+      </div>
+      <div class="vs" aria-hidden="true">VS</div>
+      <div class="side modern">
+        <p class="eyebrow" style="color:var(--tan-light)">Modern</p>
+        <ul><li>Handheld CNC and 3D printed jigs</li><li>Self levelling laser lines</li><li>Lever connectors and push fit</li><li>Tinkercad, thermal and inspection cameras</li></ul>
+      </div>
+    </div>
+
+    <div class="head" style="margin-top:64px">
+      <p class="eyebrow">How a block runs</p>
+      <h2>Six weeks, start to finish</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">STEP 1</span><h3>Plan</h3><p>We review EHCPs with the occupational therapist and set each learner's goals.</p></div>
+      <div class="step"><span class="n">STEP 2</span><h3>Build</h3><p>Weekly 90 minute sessions with a specialist tutor, all tools and materials supplied.</p></div>
+      <div class="step"><span class="n">STEP 3</span><h3>Visit</h3><p>A day on a live building site to see the trade at full scale.</p></div>
+      <div class="step"><span class="n">STEP 4</span><h3>Show</h3><p>A showcase for families and staff, certificates, and a report for every learner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="outcomes" aria-labelledby="h-out">
+  <div class="wrap outcomes">
+    <div class="head" style="margin:0">
+      <p class="eyebrow">Measured outcomes</p>
+      <h2 id="h-out">Evidence, not just a nice afternoon</h2>
+      <p class="lead">An occupational therapist assesses every learner at the start and end of each block. Schools get progress reports mapped to EHCP outcomes, ready for annual reviews.</p>
+      <div class="badges"><span class="badge">ASDAN</span><span class="badge">AQA Unit Awards</span><span class="badge">Enhanced DBS</span><span class="badge">Full risk assessments</span></div>
+    </div>
+    <div class="measure" aria-label="What we measure">
+      <div><b>Fine motor skills</b><span>Grip, precision, tool control</span></div>
+      <div><b>Gross motor skills</b><span>Lifting, posture, coordination</span></div>
+      <div><b>Motor planning</b><span>Sequencing a task end to end</span></div>
+      <div><b>Bilateral coordination</b><span>Two handed tool use</span></div>
+      <div><b>Sensory regulation</b><span>Noise, texture, focus</span></div>
+      <div><b>Confidence and teamwork</b><span>Roles, reflection, pride in work</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="about" aria-labelledby="h-about">
+  <div class="wrap outcomes">
+    <div class="head" style="margin:0">
+      <p class="eyebrow">About us</p>
+      <h2 id="h-about">Making as wellbeing, and as a way into work</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <p>Wood and Wellness began with a simple idea: making things with your hands is good for you. Today we run accredited construction and product design programmes across London, from specialist schools to community workshops.</p>
+      <p>Every block is designed by us, delivered by qualified tutors, and backed by safeguarding, insurance and clear risk assessments, so settings can offer real trade skills without building a department from scratch.</p>
+      <p>Founded and led by Kojo Sarpong, Director.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div class="head" style="margin:0">
+      <p class="eyebrow" style="color:var(--tan-light)">Get in touch</p>
+      <h2 id="h-contact">Bring the workshop to your learners</h2>
+      <p>Tell us about your setting and we will come back within two working days with a suggested programme.</p>
+      <p class="mail">info@woodandwellness.org</p>
+    </div>
+    <form id="enquiry" novalidate>
+      <label for="f-name">Your name<input id="f-name" name="name" required autocomplete="name"></label>
+      <label for="f-org">Organisation<input id="f-org" name="organisation" autocomplete="organization"></label>
+      <label for="f-email">Email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+      <label for="f-type">I am enquiring about<select id="f-type" name="type"><option>School or SEND setting</option><option>Youth justice</option><option>Adult or community</option><option>Partnership or sponsorship</option><option>Something else</option></select></label>
+      <label for="f-msg">Message<textarea id="f-msg" name="message"></textarea></label>
+      <button class="btn primary" type="submit">Send enquiry</button>
+      <p class="formnote" id="formnote">Pressing send opens your email app with your message ready to go.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Wood and Wellness Limited, company number 17403376, 124 City Road, London EC1V 2NX</span>
+    <span>Wood and Wellness CIC</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('enquiry').addEventListener('submit',function(e){e.preventDefault();var f=e.target;var g=function(n){return (f.elements[n]&&f.elements[n].value)||''};var body='Name: '+g('name')+'\nOrganisation: '+g('organisation')+'\nEmail: '+g('email')+'\nEnquiry: '+g('type')+'\n\n'+g('message');window.location.href='mailto:info@woodandwellness.org?subject='+encodeURIComponent('Website enquiry: '+g('type'))+'&body='+encodeURIComponent(body);document.getElementById('formnote').textContent='Your email app should open with your message ready to send. If it does not, email info@woodandwellness.org directly.';});
+</script>
+
+</body>
+</html>
