@@ -1,0 +1,117 @@
+/* Noho inspired theme: warm stone, olive and bark, big calm sans serif type.
+   Loaded after site.css so it overrides the navy and tan look. Remove this file
+   and its <link> tags to return to the original theme. */
+
+:root {
+  --cream: 247 244 240;   /* page background, warm stone */
+  --paper: 239 235 231;   /* alternate band, #EFEBE7 */
+  --ink: 44 38 26;        /* text, deep bark */
+  --muted: 104 96 82;
+  --line: 221 213 200;
+  --card: 255 253 250;
+  --bark: 59 52 32;       /* dark sections */
+  --bark-2: 74 66 41;
+  --olive: 126 129 66;    /* #7E8142 */
+  --olive-deep: 98 101 48;
+  --sand: 214 202 172;    /* accents on dark */
+  --lilac: 191 178 216;   /* #BFB2D8, small highlights only */
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cream: 30 27 20; --paper: 38 34 25; --ink: 240 234 222; --muted: 184 176 160;
+    --line: 62 56 42; --card: 44 40 30; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --cream: 30 27 20; --paper: 38 34 25; --ink: 240 234 222; --muted: 184 176 160;
+  --line: 62 56 42; --card: 44 40 30; color-scheme: dark;
+}
+:root:not([data-theme="dark"]) { }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --cream: 247 244 240; --paper: 239 235 231; --ink: 44 38 26; --muted: 104 96 82;
+    --line: 221 213 200; --card: 255 253 250; color-scheme: light;
+  }
+}
+
+body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 17px; }
+
+/* Typography: big, calm, sentence case */
+h1, h2, h3, .font-display, .btn-tan, .btn-navy, .btn-ghost, .btn {
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  text-transform: none;
+}
+h1, h2 { font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; }
+h3, h4 { font-weight: 600; letter-spacing: -0.02em; text-transform: none; }
+h4.font-display { text-transform: none; }
+.uppercase { text-transform: none; }
+.eyebrow { color: rgb(var(--olive-deep)); letter-spacing: .12em; font-size: 12px; }
+.on-navy .eyebrow { color: rgb(var(--sand)); }
+
+/* Dark bands become bark brown */
+.bg-navy { background-color: rgb(var(--bark)); }
+.bg-navy-2 { background-color: rgb(var(--bark-2)); }
+.on-navy, .bg-navy.text-cream, footer.bg-navy { color: rgb(247 244 240); }
+.bg-navy .text-cream, .bg-navy.text-cream, header.bg-navy .text-cream { color: rgb(247 244 240); }
+.text-cream\/60 { color: rgb(247 244 240 / .6); }
+.text-cream\/75 { color: rgb(247 244 240 / .75); }
+.text-cream\/80 { color: rgb(247 244 240 / .8); }
+.text-cream\/85 { color: rgb(247 244 240 / .85); }
+.text-cream\/90 { color: rgb(247 244 240 / .9); }
+.grain { background-image: none; }
+
+/* Accents: olive on light, sand on dark */
+.text-tan-deep { color: rgb(var(--olive-deep)); }
+.text-tan-light { color: rgb(var(--sand)); }
+.bg-tan { background-color: rgb(var(--olive)); }
+.bg-tan-light { background-color: rgb(var(--sand)); }
+.border-tan { border-color: rgb(var(--olive)); }
+.on-navy .border-tan, .bg-navy .border-tan { border-color: rgb(var(--sand)); }
+.border-tan\/40 { border-color: rgb(var(--sand) / .4); }
+.border-tan-light\/50 { border-color: rgb(var(--sand) / .5); }
+.hover\:text-tan-light:hover { color: rgb(var(--sand)); }
+.hover\:border-tan:hover { border-color: rgb(var(--olive)); }
+.group:hover .group-hover\:text-tan { color: rgb(var(--olive)); }
+
+/* Buttons: soft pill shapes */
+.btn-tan, .btn-navy, .btn-ghost, .btn { border-radius: 999px; letter-spacing: 0; font-weight: 600; padding: .8rem 1.5rem; }
+.btn-tan { background-color: rgb(var(--sand)); color: rgb(var(--bark)); }
+.btn-tan:hover { background-color: rgb(247 244 240); }
+main section:not(.on-navy):not(.bg-navy) .btn-tan { background-color: rgb(var(--olive)); color: #fff; }
+.btn-navy { background-color: rgb(var(--bark)); color: rgb(247 244 240); }
+.btn-navy:hover { background-color: rgb(var(--olive-deep)); }
+
+/* Cards: softer, rounder, no hard borders */
+.card { border-radius: 1.25rem; border-color: transparent; background-color: rgb(var(--card)); box-shadow: 0 1px 0 rgb(var(--line)); }
+.rounded-xl { border-radius: 1.25rem; }
+.rounded-2xl { border-radius: 1.75rem; }
+
+/* Header: light and quiet, like Noho */
+header.bg-navy { background-color: rgb(var(--cream) / .92); backdrop-filter: blur(10px); border-color: rgb(var(--line)); }
+header.bg-navy, header.bg-navy .text-cream, header.bg-navy .text-cream\/80, header.bg-navy .text-cream\/90 { color: rgb(var(--ink)); }
+header.bg-navy .text-tan-light { color: rgb(var(--olive-deep)); }
+header.bg-navy .border-white\/20 { border-color: rgb(var(--line)); }
+header.bg-navy .hover\:bg-white\/5:hover, header.bg-navy .bg-white\/10 { background-color: rgb(var(--paper)); }
+header.bg-navy .btn-tan { background-color: rgb(var(--bark)); color: rgb(247 244 240); }
+header .font-display.uppercase { letter-spacing: .02em; font-weight: 700; }
+
+/* Hero: lighter, warmer */
+main > section:first-child.bg-navy { background-color: rgb(var(--paper)); color: rgb(var(--ink)); }
+main > section:first-child.bg-navy .text-cream,
+main > section:first-child.bg-navy .text-cream\/80 { color: rgb(var(--ink)); }
+main > section:first-child.bg-navy .text-cream\/80 { color: rgb(var(--muted)); }
+main > section:first-child.bg-navy .text-tan-light { color: rgb(var(--olive)); }
+main > section:first-child.bg-navy .eyebrow { color: rgb(var(--olive-deep)); }
+main > section:first-child .btn-tan { background-color: rgb(var(--bark)); color: rgb(247 244 240); }
+main > section:first-child .btn-ghost { color: rgb(var(--ink)); }
+main > section:first-child h1 { font-size: clamp(46px, 7.6vw, 104px); }
+
+/* Big type footer */
+.footer-bigtype {
+  font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; letter-spacing: -0.05em;
+  line-height: .85; font-size: clamp(44px, 11.6vw, 150px); color: rgb(var(--sand) / .9);
+  white-space: nowrap; overflow: hidden; padding: 0 1rem 1.5rem;
+}
+.footer-bigtype span { color: rgb(var(--lilac)); }
