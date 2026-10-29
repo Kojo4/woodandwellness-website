@@ -51,7 +51,7 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.04em; line-height: .98; te
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Header: wordmark left, square menu button right, floats over the page */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; display: flex; justify-content: space-between; align-items: center; padding-block: 14px; pointer-events: none; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; display: flex; justify-content: space-between; align-items: center; padding-block: 12px; pointer-events: none; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .top > * { pointer-events: auto; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg); }
 .mark { display: inline-flex; align-items: center; gap: 0; text-decoration: none; font-weight: 600; font-size: 19px; letter-spacing: -0.045em; }
@@ -228,7 +228,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .foot li a { text-decoration: none; }
 .foot li a:hover { text-decoration: underline; }
 .foot-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 12px; color: var(--ink-soft); padding-block: 18px; border-top: 1px solid var(--line); }
-.foot-word { font-weight: 600; letter-spacing: -0.065em; line-height: .8; font-size: clamp(56px, 17.5vw, 300px); white-space: nowrap; overflow: hidden; padding-block: 8px 0; margin-bottom: -0.08em; }
+.foot-word { font-weight: 600; letter-spacing: -0.065em; line-height: .8; font-size: clamp(48px, 13.4vw, 240px); white-space: nowrap; overflow: hidden; padding-block: 8px 0; margin-bottom: -0.08em; }
 @media (min-width: 900px) { .foot-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; } }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
