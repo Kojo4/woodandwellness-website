@@ -38,13 +38,18 @@
 
 body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 17px; }
 
-/* Typography: big, calm, sentence case */
-h1, h2, h3, .font-display, .btn-tan, .btn-navy, .btn-ghost, .btn {
-  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
-  text-transform: none;
+/* Typography, ElevenLabs style: light serif headlines (Newsreader as a free
+   stand in for Waldenburg Light), Inter for body, menus and buttons */
+h1, h2, h3, h4, .font-display {
+  font-family: "Newsreader", "Times New Roman", Georgia, serif;
+  font-weight: 300; text-transform: none;
 }
-h1, h2 { font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; }
-h3, h4 { font-weight: 600; letter-spacing: -0.02em; text-transform: none; }
+.btn-tan, .btn-navy, .btn-ghost, .btn, header .font-display {
+  font-family: "Inter", system-ui, sans-serif; text-transform: none;
+}
+body { letter-spacing: .01em; }
+h1, h2 { font-weight: 300; letter-spacing: -0.03em; line-height: 1.02; }
+h3, h4 { font-weight: 400; letter-spacing: -0.01em; text-transform: none; }
 h4.font-display { text-transform: none; }
 .uppercase { text-transform: none; }
 .eyebrow { color: rgb(var(--olive-deep)); letter-spacing: .12em; font-size: 12px; }
@@ -110,8 +115,10 @@ main > section:first-child h1 { font-size: clamp(46px, 7.6vw, 104px); }
 
 /* Big type footer */
 .footer-bigtype {
-  font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; letter-spacing: -0.05em;
+  font-family: "Newsreader", Georgia, serif; font-weight: 300; letter-spacing: -0.04em;
   line-height: .85; font-size: clamp(44px, 11.6vw, 150px); color: rgb(var(--sand) / .9);
   white-space: nowrap; overflow: hidden; padding: 0 1rem 1.5rem;
 }
 .footer-bigtype span { color: rgb(var(--lilac)); }
+
+h1.font-bold, h2.font-bold, h1 .font-bold { font-weight: 300; }
